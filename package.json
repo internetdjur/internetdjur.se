@@ -1,0 +1,20 @@
+{
+  "name": "internetdjur",
+  "version": "1.0.0",
+  "description": "The contents of internetdjur.se",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"there are no tests here...\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cskeppstedt/internetdjur.se.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cskeppstedt/internetdjur.se/issues"
+  },
+  "homepage": "https://github.com/cskeppstedt/internetdjur.se#readme"
+}
