@@ -10,6 +10,7 @@ deploy:
   bucket: internetdjur.se
   local-dir: public
   acl: public_read
+  default_text_charset: 'utf-8'
   on:
     branch: master
     repo: cskeppstedt/internetdjur.se
