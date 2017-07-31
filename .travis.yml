@@ -9,7 +9,6 @@ deploy:
   bucket: internetdjur.se
   local-dir: public
   acl: public_read
-  endpoint: internetdjur.se.s3-website-eu-west-1.amazonaws.com
   on:
     branch: master
     repo: cskeppstedt/internetdjur.se
