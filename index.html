@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- Handcrafted organic local grass fed markup, made in Sweden ;) -->
+        <title>Internetdjur AB</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <style>
+            html, body {
+                font-family: Helvetica, 'Segoe UI', Tahoma, sans-serif;
+                font-size: 16px;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            body {
+                background: #f1f1f0;
+                color: #333333;
+            }
+            .wrapper {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .title {
+                margin: 10px 0;
+                padding: 0;
+                font-size: 20px;
+                font-weight: semi-bold;
+            }
+            .item {
+                color: #333333;
+                margin: 10px 0;
+                text-align: center;
+                transition: transform 0.1s ease-in-out;
+            }
+            .item:hover {
+                transform: scale(1.02);
+            }
+            .profile-picture {
+                background-position: top left;
+                background-repeat: none;
+                background-size: cover;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .profile-christoffer {
+                background-image: url('christoffer.jpg');
+            }
+            .profile-nils {
+                background-image: url('nils.jpg');
+            }
+            .name {
+                margin: 5px 0 10px 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 class="title">Internetdjur AB</h1>
+                <a class="item" href="https://www.linkedin.com/in/nils-edstr%C3%B6m-62ba9a21/">
+                    <div class="profile-picture profile-nils"></div>
+                    <p class="name">Nils Edström</p>
+                </a>
+                <a class="item" href="https://www.linkedin.com/in/christoffer-skeppstedt-b022494a/">
+                    <div class="profile-picture profile-christoffer"></div>
+                    <p class="name">Christoffer Skeppstedt</p>
+                </a>
+        </div>
+    </body>
+</html>
