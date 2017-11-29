@@ -17,30 +17,33 @@
                 background: #f1f1f0;
                 color: #333333;
             }
-            .wrapper {
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                position: absolute;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                justify-content: center;
-            }
             .title {
-                margin: 10px 0;
-                padding: 0;
-                font-size: 20px;
-                font-weight: semi-bold;
+                margin: 90px 0;
+                padding: 0 40px;
+                font-size: 24px;
+                line-height: 36px;
+                font-weight: 600;
             }
-            .item {
+            .bear {
+                margin: 90px 0px;
+                padding: 0 40px;
+                box-sizing: border-box;
+            }
+            .bear img {
+                width: 100%;
+            }
+            .profiles {
+                margin: 90px 0;
+                text-align: center;
+            }
+            .profile {
+                display: block;
                 color: #333333;
-                margin: 10px 0;
+                margin: 40px 0;
                 text-align: center;
                 transition: transform 0.1s ease-in-out;
             }
-            .item:hover {
+            .profile:hover {
                 transform: scale(1.02);
             }
             .profile-picture {
@@ -62,19 +65,27 @@
                 margin: 5px 0 10px 0;
                 padding: 0;
             }
+            .green-text {
+                color: #00d4a6;
+            }
         </style>
     </head>
     <body>
-        <div class="wrapper">
-            <h1 class="title">Internetdjur AB</h1>
-                <a class="item" href="https://www.linkedin.com/in/nils-edstr%C3%B6m-62ba9a21/">
-                    <div class="profile-picture profile-nils"></div>
-                    <p class="name">Nils Edström</p>
-                </a>
-                <a class="item" href="https://www.linkedin.com/in/christoffer-skeppstedt-b022494a/">
-                    <div class="profile-picture profile-christoffer"></div>
-                    <p class="name">Christoffer Skeppstedt</p>
-                </a>
+        <h1 class="title">
+            Hej! We are <span class="green-text">Internetdjur</span>—A Göteborg based web consultancy building a better online world
+        </h1>
+        <div class="bear">
+            <img src="./bear.svg" />
+        </div>
+        <div class="profiles">
+            <a class="profile" href="https://www.linkedin.com/in/nils-edstr%C3%B6m-62ba9a21/">
+                <div class="profile-picture profile-nils"></div>
+                <p class="name">Nils Edström</p>
+            </a>
+            <a class="profile" href="https://www.linkedin.com/in/christoffer-skeppstedt-b022494a/">
+                <div class="profile-picture profile-christoffer"></div>
+                <p class="name">Christoffer Skeppstedt</p>
+            </a>
         </div>
     </body>
 </html>
