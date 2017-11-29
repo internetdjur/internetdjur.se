@@ -4,6 +4,7 @@
   "description": "The contents of internetdjur.se",
   "main": "index.js",
   "scripts": {
+    "start": "live-server public --no-css-inject",
     "test": "echo \"there are no tests here...\""
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/cskeppstedt/internetdjur.se/issues"
   },
-  "homepage": "https://github.com/cskeppstedt/internetdjur.se#readme"
+  "homepage": "https://github.com/cskeppstedt/internetdjur.se#readme",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
 }
