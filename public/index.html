@@ -14,7 +14,7 @@
                 height: 100%;
             }
             body {
-                background: #f1f1f0;
+                background: #fcfcfc;
                 color: #333333;
             }
             .title {
@@ -31,6 +31,7 @@
             }
             .bear img {
                 width: 100%;
+                max-width: 300px;
             }
             .profiles {
                 margin: 90px 0;
@@ -39,9 +40,11 @@
             .profile {
                 display: block;
                 color: #333333;
-                margin: 40px 0;
+                margin: 45px 0;
                 text-align: center;
                 transition: transform 0.1s ease-in-out;
+                text-decoration: none;
+                padding: 0 30px;
             }
             .profile:hover {
                 transform: scale(1.02);
@@ -54,6 +57,7 @@
                 height: 80px;
                 border-radius: 50%;
                 display: inline-block;
+                margin: 10px 0;
             }
             .profile-christoffer {
                 background-image: url('christoffer.jpg');
@@ -62,8 +66,15 @@
                 background-image: url('nils.jpg');
             }
             .name {
-                margin: 5px 0 10px 0;
+                font-size: 22px;
+                line-height: 32px;
+                display: block;
+                margin: 10px 0;
                 padding: 0;
+            }
+            .description {
+                font-size: 16px;
+                line-height: 24px;
             }
             .green-text {
                 color: #00d4a6;
@@ -72,7 +83,8 @@
     </head>
     <body>
         <h1 class="title">
-            Hej! We are <span class="green-text">Internetdjur</span>—A Göteborg based web consultancy building a better online world
+            Hej! We are <span class="green-text">internetdjur</span>—A
+            Göteborg based web consultancy building a better online world
         </h1>
         <div class="bear">
             <img src="./bear.svg" />
@@ -80,11 +92,20 @@
         <div class="profiles">
             <a class="profile" href="https://www.linkedin.com/in/nils-edstr%C3%B6m-62ba9a21/">
                 <div class="profile-picture profile-nils"></div>
-                <p class="name">Nils Edström</p>
+                <span class="name">Nils Edström</span>
+                <span class="description">
+                     Iterative approaches to corporate strategy foster
+                     collaborative thinking to further the overall value
+                     proposition.
+                </span>
             </a>
             <a class="profile" href="https://www.linkedin.com/in/christoffer-skeppstedt-b022494a/">
                 <div class="profile-picture profile-christoffer"></div>
-                <p class="name">Christoffer Skeppstedt</p>
+                <span class="name">Christoffer Skeppstedt</span>
+                <span class="description">
+                    Organically grow the holistic world view of disruptive
+                    innovation via workplace diversity and empowerment.
+                </span>
             </a>
         </div>
     </body>
