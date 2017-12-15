@@ -1,112 +1,158 @@
 <!doctype html>
 <html>
-    <head>
-        <!-- Handcrafted organic local grass fed markup, made in Sweden ;) -->
-        <title>Internetdjur AB</title>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-        <meta charset="utf-8">
-        <style>
-            html, body {
-                font-family: Helvetica, 'Segoe UI', Tahoma, sans-serif;
-                font-size: 16px;
-                padding: 0;
-                margin: 0;
-                height: 100%;
-            }
-            body {
-                background: #fcfcfc;
-                color: #333333;
-            }
-            .title {
-                margin: 90px 0;
-                padding: 0 40px;
-                font-size: 24px;
-                line-height: 36px;
-                font-weight: 600;
-            }
-            .bear {
-                margin: 90px 0px;
-                padding: 0 40px;
-                box-sizing: border-box;
-            }
-            .bear img {
-                width: 100%;
-                max-width: 300px;
-            }
-            .profiles {
-                margin: 90px 0;
-                text-align: center;
-            }
-            .profile {
-                display: block;
-                color: #333333;
-                margin: 45px 0;
-                text-align: center;
-                transition: transform 0.1s ease-in-out;
-                text-decoration: none;
-                padding: 0 30px;
-            }
-            .profile:hover {
-                transform: scale(1.02);
-            }
-            .profile-picture {
-                background-position: top left;
-                background-repeat: none;
-                background-size: cover;
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                display: inline-block;
-                margin: 10px 0;
-            }
-            .profile-christoffer {
-                background-image: url('christoffer.jpg');
-            }
-            .profile-nils {
-                background-image: url('nils.jpg');
-            }
-            .name {
-                font-size: 22px;
-                line-height: 32px;
-                display: block;
-                margin: 10px 0;
-                padding: 0;
-            }
-            .description {
-                font-size: 16px;
-                line-height: 24px;
-            }
-            .green-text {
-                color: #00d4a6;
-            }
-        </style>
-    </head>
-    <body>
-        <h1 class="title">
-            Hej! We are <span class="green-text">internetdjur</span>—A
-            Göteborg based web consultancy building a better online world
-        </h1>
-        <div class="bear">
-            <img src="./bear.svg" />
-        </div>
-        <div class="profiles">
-            <a class="profile" href="https://www.linkedin.com/in/nils-edstr%C3%B6m-62ba9a21/">
-                <div class="profile-picture profile-nils"></div>
-                <span class="name">Nils Edström</span>
-                <span class="description">
-                     Iterative approaches to corporate strategy foster
-                     collaborative thinking to further the overall value
-                     proposition.
-                </span>
-            </a>
-            <a class="profile" href="https://www.linkedin.com/in/christoffer-skeppstedt-b022494a/">
-                <div class="profile-picture profile-christoffer"></div>
-                <span class="name">Christoffer Skeppstedt</span>
-                <span class="description">
-                    Organically grow the holistic world view of disruptive
-                    innovation via workplace diversity and empowerment.
-                </span>
-            </a>
-        </div>
-    </body>
+  <head>
+    <!-- Handcrafted organic local grass fed markup, made in Sweden ;) -->
+    <title>Internetdjur AB</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <style>
+      html,
+      body {
+        font-family: Helvetica, 'Segoe UI', Tahoma, sans-serif;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background: #fcfcfc;
+        color: #333333;
+      }
+
+      .title {
+        margin: 90px auto;
+        padding: 0 40px;
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 600;
+        max-width: 650px;
+      }
+
+      .bear {
+        margin: 90px 0px;
+        padding: 0 40px;
+        text-align: center;
+      }
+
+      .logo {
+        display: none;
+        margin: 90px 0px;
+        padding: 0 40px;
+        text-align: center;
+      }
+
+      .bear img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .logo img {
+        width: 100%;
+        max-width: 650px;
+      }
+
+      .profiles {
+        margin: 90px 0;
+        text-align: center;
+      }
+
+      .profile {
+        display: block;
+        color: #333333;
+        margin: 45px auto;
+        text-align: center;
+        transition: transform 0.1s ease-in-out;
+        text-decoration: none;
+        padding: 0 30px;
+        max-width: 300px;
+      }
+
+      .profile:hover {
+        transform: scale(1.02);
+      }
+
+      .profile-picture {
+        background-position: top left;
+        background-repeat: none;
+        background-size: cover;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 10px 0;
+      }
+
+      .profile-christoffer {
+        background-image: url('christoffer.jpg');
+      }
+
+      .profile-nils {
+        background-image: url('nils.jpg');
+      }
+
+      .name {
+        font-size: 22px;
+        line-height: 32px;
+        display: block;
+        margin: 10px 0;
+        padding: 0;
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .green-text {
+        color: #00d4a6;
+      }
+
+      @media (min-width:600px) {
+        .bear {
+          display: none;
+        }
+        .logo {
+          display: block;
+        }
+        .profiles {
+          display: flex;
+          justify-content: center;
+        }
+        .profile {
+          margin: 0;
+        }
+        .title {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="./logo.svg" />
+    </div>
+    <h1 class="title">
+      Hej! We are
+      <span class="green-text">internetdjur</span>—A Göteborg based web consultancy building a better online world
+    </h1>
+    <div class="bear">
+      <img src="./bear.svg" />
+    </div>
+    <div class="profiles">
+      <a class="profile" href="https://www.linkedin.com/in/nils-edstr%C3%B6m-62ba9a21/">
+        <div class="profile-picture profile-nils"></div>
+        <span class="name">Nils Edström</span>
+        <span class="description">
+          Experienced webdeveloper with expertise in the .NET ecosystem, but above all a generalist that loves to learn.
+        </span>
+      </a>
+      <a class="profile" href="https://www.linkedin.com/in/christoffer-skeppstedt-b022494a/">
+        <div class="profile-picture profile-christoffer"></div>
+        <span class="name">Christoffer Skeppstedt</span>
+        <span class="description">
+          Dedicated frontend developer with expertise in the JavaScript ecosystem, with a broad background in system development and computer science.
+        </span>
+      </a>
+    </div>
+  </body>
 </html>
