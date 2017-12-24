@@ -9,13 +9,19 @@ gulp.task("copy", () =>
 gulp.task("minify", () =>
   gulp
     .src("./src/index.html")
-    .pipe(htmlmin({ collapseWhitespace: true, minifyCSS: true }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+        minifyCSS: true,
+        removeComments: false
+      })
+    )
     .pipe(gulp.dest("./dist/"))
 );
 
 gulp.task("default", ["copy", "minify"]);
 
 gulp.task("watch", ["default"], () => {
-  liveServer.start({ root: "./dist" });
+  liveServer.start({ root: "./dist", wait: 100 });
   gulp.watch("./src/*", ["default"]);
 });
