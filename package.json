@@ -4,7 +4,8 @@
   "description": "The contents of internetdjur.se",
   "main": "index.js",
   "scripts": {
-    "start": "live-server public --no-css-inject",
+    "start": "gulp watch",
+    "dist": "gulp",
     "test": "echo \"there are no tests here...\""
   },
   "repository": {
@@ -19,6 +20,9 @@
   },
   "homepage": "https://github.com/cskeppstedt/internetdjur.se#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
     "live-server": "^1.2.0"
   }
 }
