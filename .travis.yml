@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "8"
+install: yarn install --pure-lockfile
 script: npm run dist
 deploy:
   provider: s3
