@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp watch",
-    "dist": "gulp",
+    "dist": "gulp dist",
     "test": "echo \"there are no tests here...\""
   },
   "repository": {

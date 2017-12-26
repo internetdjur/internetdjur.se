@@ -19,9 +19,9 @@ gulp.task("minify", () =>
     .pipe(gulp.dest("./dist/"))
 );
 
-gulp.task("default", ["copy", "minify"]);
+gulp.task("dist", ["copy", "minify"]);
 
-gulp.task("watch", ["default"], () => {
+gulp.task("watch", ["dist"], () => {
   liveServer.start({ root: "./dist", wait: 100 });
-  gulp.watch("./src/*", ["default"]);
+  gulp.watch("./src/*", ["dist"]);
 });
