@@ -10,9 +10,10 @@ deploy:
     secure: D2g06S8uG60NhE2HwwnWq68qOsksZ2CxTtpEIYbzgak9HfOFLx9ztbTFrt6ghRG5aatK+9/Qw7rTpG4Dv8P0yFfMyd1tjmyazgLqGrThZW3BEGxghb5xoesw3W62+1pOjZuyaM0NTPmYuEfZslEIj2zZ/HiaGBfybLehjZNTafszTlnSc0I1rssVJ8RrZRPzuV+PbfNA5WVWF++R95ONiPZ9PDj+ikOIyI+eSP9zsScqHGRd9aMVkVCtIAVtTfXqbDUg2LFQL4cIFHVXPfyGWW277OXR6zcRct9ia2k/2RbVCtg1EiYg4ohXyHvmBjwq5quvanpENbluRuXCwIzdqnr1q37N2giGZ7UUvdLDkWvW5ZwxBhv3iv11OTqfRzynUpSX4shA+9tdlOnQYpM8sa5tcTYDOOfd0wV21B9sl5LEj0hBAKv7FqkuRSy8vKEwAKkNY2ezjfeLwZK/p1uTa7d6ugDjRwWeLmvRT1wKmc4una1BCGm+lep40phJvUQFlIsmiJuWN2aa4dRcfcKf/ZKnzgx+n8m4LKNCTUmBw5YYVyDR2XIqDzgZdQXIhovFBxXkq3+JlxrJLUAJl/05EdczhivmvJHfEvntgeiHmZT9yec52/4uhqJamwdVW4tRXcZYCv6ugIPp2AevkRZ13r29I4/RFI64+PAfGXGwcAE=
   region: eu-west-1
   bucket: "internetdjur.se"
-  local-dir: dist
   acl: public_read
   default_text_charset: 'utf-8'
+  skip_cleanup: true
+  local-dir: dist
   on:
     branch: master
     repo: cskeppstedt/internetdjur.se
