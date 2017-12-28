@@ -1,7 +1,9 @@
 language: node_js
 node_js:
-  - "8"
-install: yarn install
+- '8'
+install:
+- yarn install
+- npm install -g travis-ci-cloudfront-invalidation@0.0.4
 script: npm run dist
 deploy:
   provider: s3
@@ -9,11 +11,19 @@ deploy:
   secret_access_key:
     secure: D2g06S8uG60NhE2HwwnWq68qOsksZ2CxTtpEIYbzgak9HfOFLx9ztbTFrt6ghRG5aatK+9/Qw7rTpG4Dv8P0yFfMyd1tjmyazgLqGrThZW3BEGxghb5xoesw3W62+1pOjZuyaM0NTPmYuEfZslEIj2zZ/HiaGBfybLehjZNTafszTlnSc0I1rssVJ8RrZRPzuV+PbfNA5WVWF++R95ONiPZ9PDj+ikOIyI+eSP9zsScqHGRd9aMVkVCtIAVtTfXqbDUg2LFQL4cIFHVXPfyGWW277OXR6zcRct9ia2k/2RbVCtg1EiYg4ohXyHvmBjwq5quvanpENbluRuXCwIzdqnr1q37N2giGZ7UUvdLDkWvW5ZwxBhv3iv11OTqfRzynUpSX4shA+9tdlOnQYpM8sa5tcTYDOOfd0wV21B9sl5LEj0hBAKv7FqkuRSy8vKEwAKkNY2ezjfeLwZK/p1uTa7d6ugDjRwWeLmvRT1wKmc4una1BCGm+lep40phJvUQFlIsmiJuWN2aa4dRcfcKf/ZKnzgx+n8m4LKNCTUmBw5YYVyDR2XIqDzgZdQXIhovFBxXkq3+JlxrJLUAJl/05EdczhivmvJHfEvntgeiHmZT9yec52/4uhqJamwdVW4tRXcZYCv6ugIPp2AevkRZ13r29I4/RFI64+PAfGXGwcAE=
   region: eu-west-1
-  bucket: "internetdjur.se"
+  bucket: internetdjur.se
   acl: public_read
-  default_text_charset: 'utf-8'
+  default_text_charset: utf-8
   skip_cleanup: true
   local-dir: dist
   on:
     branch: master
     repo: cskeppstedt/internetdjur.se
+after_deploy:
+- travis-ci-cloudfront-invalidation -a AKIAJ64EYVBL22CNNP5A -s $AWS_SECRET_ACCESS_KEY -c $AWS_CLOUDFRONT_DISTRIBUTION_COM -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST
+- travis-ci-cloudfront-invalidation -a AKIAJ64EYVBL22CNNP5A -s $AWS_SECRET_ACCESS_KEY -c $AWS_CLOUDFRONT_DISTRIBUTION_SE -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST
+env:
+  global:
+  - secure: ouGyKLLye/WQlmc9w4DzOzhwgF+mL7BA1zT7qqdwza8s2dqBarWGj6ZMeBx4D6wcQ/VXfceKnZrWu+TdzedAAa0/ElHS3CqGQcCjAEG4gDFbEV+J9RQTNgF1RsdTL3dyN7rgw3Dlj2E8rZXR169DyyLjJqkhlx1EjyhTpafiV6rfigPJAtYr+bvTFCxwVu0fEFQQT1xomgLtEpJQb8Cda1guoFIpl1YkGMF16nw0fd2UHoUOBaptSLa2EQJjClSblVwl4s12EGfbIyaMgh0/qtY9ZIaFjkIdi7+FfqvvUMFvmot82w3NQMAas1cPHqPO2muxVfe7Qj8m0gThdppsrty8OPzX9J0g1ZQPFkEoQcNXn4Q+1F1zdzVtTItazeFVbCIFxc5+ZoQrjJ2zdGfj4vxNYfhPeYWPk+7KzdbzWSE7TWoZ2fDmRA7cxfkG4GcN0vssPcg0HJr5B64IVMl0lJidl0LEvVaOuGtj4my9Lmu62Jv1XmTaj4lTE9BZQ0kuN/yxxyxs6iQJD02NdJ9k34ek0RMkCUxVdsrq0Dogx+l976R5UoF1KgY6ywbW736Lm7VaUeVzte9DHBf1wwG+u09M4eCVkj5u5Uqt+AlWEleDAuoeunARysn8GD5+vIpa36dQoL8LiCzGF/eMYjEs7eRIeMmPRhmfOZ8SLa1cufU=
+  - secure: Ulz835oN/jWLmku8KdKkdqUFtOIOfAV0rCbRIqZOqy/jYH+EXql1ZFhwiZVvpf3C/6ByCEr7hRmDju85XeZNSecLnOIDfYX7FZm6NfJl0iX4KvPOS8pkYwZhQbFwYvX7p2inV27ENsbuJ1D8evghIq0+/tqGjrmqAJTDdWdL1mBY7WvW/Gj8r4UB7wr7hpZsbtVTnpjb0xE7G/j6O5Q0zfKgEvSFDGpGaW+DD3RyB/f//H8h1v79VY+Tj2zo2Tj1ylvfxTD2fw1LwUnUyIdLQDUcAS3b3Ua7Qpe6DxDJsaG8Ees+N/yQat+M47dQUYipGAIWwIhsXs6TKRd2xUG7IdIsM26i3dlD1o1plFboFUNfTrO5g+WScpbkUnC9j/iGOmOHDSa7LiTRnJRdbrH+F1s7MKJtyoUeddtG9xXTHi133AVlth6E6iUsMsgepYRkAnPu5oFriTZBBS0uSJul7dtm7IIouFxNvpID3i79mH0rNDKIju8k1X+sNorJKT+CALNwS/J1u7pUmG5wqbVTcK8hun7N0ka+5m+HIEGyo+Zqnutf+6XY6pfkt7VICTznGi6JAeI2CdlNsE2W8kMKMSrPshcYIwD97g1kuI91ARU9DnxiWHmyUcIeuMXQI7KWGqd3Zjf7fFf0fk6fHlnW1u9mJYfFv2b3CmnSY6mmMwg=
+  - secure: TKF6RTia8enqsIymvw2edtq4h0ch9hOD1867eT+mXOCTifvNrXl9FSI/gPnvS6CsU++xKIn3drK3rZGQL8tZADKGKN+Xc4gwtV4IXIubt9Je1HVRJDz8ahVkesanpk4lU64cye2oNGf1oeucovI2uEPYbMGXAj159tZud9Fi17KE8YVB3rdmvphEtOPmKYP5rFsmouQ1pOFxsUMSF/g3xAS1Vr/IBoPc4RZxqpEN1rCQVouZ39gJLo9m6/9HLRxGpS2y0O4fgdTWXoWgCF0G16YYHkNyP/d02Heb87/qDaacDRo38QV3aJ/hTOhUeYAfZk+mlx84H++JcC5CfNfRuwF6oM5Q+CB2ltX52ahZiNJDmXjKEORX+dyM8mrns0j5bNGXnbhM7sFFyzKkkohXOiMJvf+g5prZOcfCUB2aQmcV9Z7Ej4EXRkYNikNX91sx7tHZ7m0AHBLvNh2K24qArPcNldOh1Z2S8er1bqyDjAsRT7B/serCu5MBZ0WmI/cY0gubq9iY0MAC4DucTf7b8P0xm1aL1qduD0qRi13bazW2Gz9rCbmMCxAgYEoEtB4132db0GRf3YVlhfkbcZwJU+Pvzl7RCPPkKaqps3ARjhiqyqtC6bgASrzPQepVaMu3YUI+jlTipdThO3wKXQjYEjOrSaC3+n4+BfEcSH2UfyA=
