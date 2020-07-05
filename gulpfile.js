@@ -13,15 +13,15 @@ gulp.task("minify", () =>
       htmlmin({
         collapseWhitespace: true,
         minifyCSS: true,
-        removeComments: false
+        removeComments: false,
       })
     )
     .pipe(gulp.dest("./dist/"))
 );
 
-gulp.task("dist", ["copy", "minify"]);
+gulp.task("dist", gulp.series("copy", "minify"));
 
-gulp.task("watch", ["dist"], () => {
+gulp.task("watch", gulp.series("dist"), () => {
   liveServer.start({ root: "./dist", wait: 100 });
   gulp.watch("./src/*", ["dist"]);
 });
