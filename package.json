@@ -4,25 +4,26 @@
   "description": "The contents of internetdjur.se",
   "main": "index.js",
   "scripts": {
-    "start": "gulp watch",
-    "dist": "gulp dist",
-    "test": "echo \"there are no tests here...\""
+    "start": "npx concurrently \"npm run watch\" \"npm run serve\"",
+    "serve": "npx live-server dist",
+    "watch": "gulp watch",
+    "dist": "gulp dist"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:cskeppstedt/internetdjur.se.git"
+    "url": "git@github.com:internetdjur/internetdjur.se.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cskeppstedt/internetdjur.se/issues"
+    "url": "https://github.com/internetdjur/internetdjur.se/issues"
   },
-  "homepage": "https://github.com/cskeppstedt/internetdjur.se#readme",
+  "homepage": "https://github.com/internetdjur/internetdjur.se#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
-    "gulp-htmlmin": "^5.0.1",
-    "live-server": "^1.2.1"
+    "gulp-connect": "^5.7.0",
+    "gulp-htmlmin": "^5.0.1"
   }
 }

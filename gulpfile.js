@@ -1,4 +1,3 @@
-const liveServer = require("live-server");
 const gulp = require("gulp");
 const htmlmin = require("gulp-htmlmin");
 
@@ -21,7 +20,4 @@ gulp.task("minify", () =>
 
 gulp.task("dist", gulp.series("copy", "minify"));
 
-gulp.task("watch", gulp.series("dist"), () => {
-  liveServer.start({ root: "./dist", wait: 100 });
-  gulp.watch("./src/*", ["dist"]);
-});
+gulp.task("watch", () => gulp.watch("./src/*", gulp.series("dist")));
